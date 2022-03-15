@@ -1,0 +1,594 @@
+/* ===========================================
+=============    Css reset   =================
+============================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================
+=============   End Css reset   =================
+============================================== */
+
+:root {
+  --clr-Primary-Pink: hsl(322, 100%, 66%);
+  --clr-primary-Light-Pink: hsl(321, 100%, 78%);
+  --clr-Primary-Light-Red: hsl(0, 100%, 63%);
+  --clr-Neutral-Very-Dark-Cyan: hsl(192, 100%, 9%);
+  --clr-Neutral-Very-Pale-Blue: hsl(207, 100%, 98%);
+
+  --ff-open-sans: "Open Sans", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--ff-open-sans);
+}
+
+body > * + * {
+  margin-top: 5rem;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.content {
+  max-width: 84%;
+  margin-inline: auto;
+}
+
+.header-content,
+.footer-content {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.container-description > * + * {
+  margin-top: 1.5rem;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 5rem;
+}
+
+/* ================  Typography  =================== */
+
+h1,
+h2,
+p {
+  color: var(--clr-Neutral-Very-Dark-Cyan);
+}
+
+h1,
+h2 {
+  font-family: var(--ff-poppins);
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 0.95rem;
+}
+
+/* ================  Button  =================== */
+
+.cta {
+  padding: 0.5em 1.5em;
+  border: none;
+  font-weight: 600;
+}
+
+.header-btn {
+  background: transparent;
+  border: 1px solid var(--clr-Primary-Pink);
+  border-radius: 50px;
+  color: var(--clr-Primary-Pink);
+  font-size: 0.65rem;
+  box-shadow: 0 2px 5px 0 rgba(255, 143, 216, 0.4);
+  transition: border 150ms ease-in-out, color 150ms ease-in-out;
+}
+
+.header-btn:hover {
+  cursor: pointer;
+  border: 1px solid var(--clr-primary-Light-Pink);
+  color: var(--clr-primary-Light-Pink);
+}
+
+.main-description__btn,
+.join-us-btn {
+  background: var(--clr-Primary-Pink);
+  color: var(--clr-Neutral-Very-Pale-Blue);
+  font-size: 0.8rem;
+  padding: 0.8em 3.2em;
+  border-radius: 50px;
+  margin-top: 3rem;
+  box-shadow: 0 2px 5px 0 rgba(255, 143, 216, 0.6);
+  transition: background 150ms ease-in-out;
+}
+
+.newsletter-form-btn {
+  background: var(--clr-Primary-Pink);
+  color: var(--clr-Neutral-Very-Pale-Blue);
+  border-radius: 0.2em;
+  font-size: 0.95rem;
+  padding: 0.8em 2.5em;
+  transition: background 150ms ease-in-out;
+}
+
+.main-description__btn:hover,
+.join-us-btn:hover,
+.newsletter-form-btn:hover {
+  cursor: pointer;
+  background: var(--clr-primary-Light-Pink);
+}
+
+/* ================  Header  =================== */
+
+.header-content {
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+/* ================  Main  =================== */
+
+.main-content > * + * {
+  margin-top: 7rem;
+}
+
+.main-survay {
+  flex-direction: column;
+  gap: 6rem;
+  margin-bottom: 8rem;
+}
+
+.survay-icon {
+  width: 30px;
+}
+
+.survay-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.survay-subtitle {
+  opacity: 0.5;
+}
+
+/* ================  Container together  =================== */
+
+.together-container {
+  background-color: var(--clr-Neutral-Very-Pale-Blue);
+  padding: 5rem 0;
+  position: relative;
+}
+
+.together-container::before,
+.together-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.together-container::before {
+  background-image: url(/images/bg-section-top-mobile-1.svg);
+  height: 150px;
+  top: -110px;
+  left: 0;
+}
+
+.together-container::after {
+  background-image: url(/images/bg-section-bottom-mobile-1.svg);
+  height: 150px;
+  bottom: -150px;
+  left: 0;
+}
+
+/* ================  Container conversations  =================== */
+
+.conversations-container {
+  padding: 6rem 0 9rem;
+}
+
+/* ================  Container users  =================== */
+
+.users-container {
+  background-color: var(--clr-Neutral-Very-Pale-Blue);
+  padding: 2rem 0 5rem;
+  position: relative;
+}
+
+.users-container::before,
+.users-container::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.users-container::before {
+  background-image: url(/images/bg-section-top-mobile-2.svg);
+  height: 150px;
+  top: -100px;
+  left: 0;
+}
+
+.users-container::after {
+  background-image: url(/images/bg-section-bottom-mobile-2.svg);
+  height: 150px;
+  bottom: -150px;
+  left: 0;
+}
+
+/* ================  Container join-us  =================== */
+
+.join-us-container {
+  padding: 5rem 0;
+}
+
+/* ================  Footer  =================== */
+
+footer {
+  background: var(--clr-Neutral-Very-Dark-Cyan);
+  padding: 4rem 0 0;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/bg-footer-top-mobile.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 150px;
+  top: -50px;
+  left: 0;
+}
+
+footer h1,
+footer h2,
+footer p {
+  color: var(--clr-Neutral-Very-Pale-Blue);
+  text-align: left;
+}
+
+.newsletter > * + * {
+  margin-top: 1.5rem;
+}
+
+.newsletter-title {
+  text-transform: uppercase;
+  font-family: var(--ff-open-sans);
+  font-weight: 600;
+}
+
+.newsletter-form {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.newsletter-form-input {
+  width: 100%;
+  padding: 0.7em 0.4em;
+  border: none;
+  outline: 0;
+  border-radius: 0.3rem;
+}
+
+.contact-info > * + * {
+  margin-top: 1.5rem;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.phone,
+.email {
+  gap: 1rem;
+}
+
+.social-links {
+  width: max-content;
+  gap: 0.9rem;
+}
+
+ion-icon {
+  color: var(--clr-Neutral-Very-Pale-Blue);
+  font-size: 1.2rem;
+  border: 2px solid var(--clr-Neutral-Very-Pale-Blue);
+  border-radius: 0.4em;
+  padding: 0.3em;
+  transition: background 150ms ease-in-out, color 150ms ease-in-out,
+    border 150ms ease-in-out;
+}
+
+ion-icon:hover {
+  cursor: pointer;
+  background: hsl(222, 100%, 84%);
+  color: var(--clr-Neutral-Very-Dark-Cyan);
+  border: 2px solid hsl(222, 100%, 84%);
+}
+
+.attribution {
+  font-size: 0.7rem;
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+.attribution > a {
+  text-decoration: none;
+  color: hsl(222, 100%, 84%);
+}
+
+.attribution > a:hover {
+  color: var(--clr-primary-Light-Pink);
+}
+
+/* ===========================   Media quaries   =========================== */
+
+@media only screen and (min-width: 1000px) {
+  .content {
+    max-width: 80%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10rem;
+    text-align: left;
+  }
+
+  /* ================  Typography  =================== */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* ================  Button  =================== */
+  .main-description__btn,
+  .join-us-btn {
+    font-size: 1rem;
+    padding: 1em 5em;
+  }
+  /* ================  Header  =================== */
+  .header-content {
+    max-width: 90%;
+    padding: 3rem 0;
+  }
+
+  .header-logo {
+    width: 200px;
+  }
+
+  .header-btn {
+    font-size: 0.8rem;
+    padding-inline: 2em;
+  }
+
+  /* ================  Main  =================== */
+
+  .main-description-subtitle {
+    max-width: 52ch;
+    margin-inline: auto;
+  }
+
+  .main-survay {
+    max-width: 83%;
+    margin-inline: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6rem;
+    margin-bottom: 15rem;
+  }
+
+  .survay-title {
+    font-size: 5rem;
+  }
+
+  .survay-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.5;
+  }
+
+  /* ================  Container together  =================== */
+
+  .together-img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .together-description {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .together-container::before {
+    background-image: url(/images/bg-section-top-desktop-1.svg);
+    top: -150px;
+    left: 0;
+  }
+
+  .together-container::after {
+    background-image: url(/images/bg-section-bottom-desktop-1.svg);
+    bottom: -150px;
+    left: 0;
+  }
+
+  /* ================  Container conversations  =================== */
+
+  .conversations-container {
+    padding: 13rem 0 10rem;
+  }
+
+  /* ================  Container users  =================== */
+
+  .users-img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .users-description {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .users-container::before {
+    background-image: url(/images/bg-section-top-desktop-2.svg);
+    height: 150px;
+    top: -150px;
+    left: 0;
+  }
+
+  .users-container::after {
+    background-image: url(/images/bg-section-bottom-desktop-2.svg);
+    height: 150px;
+    bottom: -150px;
+    left: 0;
+  }
+
+  /* ================  Container join-us  =================== */
+
+  .join-us-container {
+    padding: 15rem 0;
+  }
+
+  /* ================  Footer  =================== */
+
+  footer h2 {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .newsletter {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .contact-info {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  footer::before {
+    background-image: url(/images/bg-footer-top-desktop.svg);
+    height: 150px;
+    top: -150px;
+    left: 0;
+  }
+
+  .footer-subtitle,
+  .newsletter-subtitle {
+    max-width: 40ch;
+  }
+
+  .newsletter-form {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .social-links {
+    margin-top: 5rem;
+  }
+}
