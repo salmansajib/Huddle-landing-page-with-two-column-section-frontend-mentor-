@@ -466,6 +466,10 @@ ion-icon:hover {
 
   /* ================  Main  =================== */
 
+  main {
+    padding-top: 10rem;
+  }
+
   .main-description-subtitle {
     max-width: 52ch;
     margin-inline: auto;
